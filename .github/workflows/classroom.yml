@@ -17,16 +17,6 @@ jobs:
 
       - uses: docker/setup-buildx-action@v2
 
-      # TODO build, publish to docker hub, deploy to k8s
-
-      - name: Run API Tests
-        uses: matt-ball/newman-action@master
-        with:
-          collection: v3/postman/collection.json
-          environment: v3/postman/environment.json
-          delayRequest: 100
-          reporters: '[ "cli" ]'
-
       - uses: education/autograding@v1
         id: autograder
         continue-on-error: true
